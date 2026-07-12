@@ -1,0 +1,213 @@
+/* ==========================================================
+   TESTOVACÍ WEB — sdílený styl pro všechny stránky
+   Tmavý černo-červený motiv. Barvy si klidně uprav v proměnných níže.
+   ========================================================== */
+
+:root {
+  --bg-dark: #0d0808;
+  --bg-panel: #1a0f0f;
+  --red-main: #c81e2c;
+  --red-dark: #7a0f18;
+  --red-glow: #ff2e3f;
+  --text-light: #f2e9e9;
+  --text-muted: #b89a9a;
+  --border-col: #3a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Hlavička a navigace ---------- */
+header {
+  background-color: var(--bg-panel);
+  border-bottom: 2px solid var(--red-dark);
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--red-glow);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--red-glow);
+  border-bottom-color: var(--red-main);
+}
+
+/* ---------- Obsah stránky ---------- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--red-glow);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--red-main);
+  margin: 2rem 0 1rem;
+  border-left: 4px solid var(--red-main);
+  padding-left: 0.6rem;
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--bg-panel), var(--bg-dark));
+  border: 1px solid var(--border-col);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--red-main);
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--red-glow);
+}
+
+/* ---------- Galerie ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-col);
+  border-radius: 6px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery-item .placeholder-img {
+  width: 100%;
+  height: 160px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--red-dark),
+    var(--red-dark) 10px,
+    var(--bg-panel) 10px,
+    var(--bg-panel) 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.gallery-item figcaption {
+  padding: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Obsahové bloky (pro trénink úprav) ---------- */
+.content-block {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-col);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-block h3 {
+  color: var(--red-glow);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Formulář ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 480px;
+}
+
+label {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+input,
+textarea {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-col);
+  color: var(--text-light);
+  padding: 0.6rem;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--red-main);
+}
+
+/* ---------- Patička ---------- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-col);
+  font-size: 0.85rem;
+}
