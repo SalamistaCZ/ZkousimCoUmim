@@ -42,4 +42,23 @@
       </div>
       <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
         <button type="submit" class="btn">Odeslat</button>
-        <button type="button" class="btn btn-small" onclick="document.getElementById('poslat-v
+        <button type="button" id="btn-poslat" class="btn" style="margin-left:0.5rem;">Nechat se poslat někam</button>
+      </div>
+      <p id="poslat-vysledek" style="display:none; color:var(--red-glow); font-weight:bold;">
+        Tento formulář tě poslal do řiti.
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2026 Testovací Web — vytvořeno v záchvatu nadšení, provozován v hlubokém pocitu bezmoci.
+  </footer>
+
+  <script>
+    document.getElementById('btn-poslat').addEventListener('click', function () {
+      document.getElementById('poslat-vysledek').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
