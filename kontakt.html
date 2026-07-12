@@ -23,11 +23,11 @@
   <main>
     <h1>Kontakt</h1>
     <p>
-      Ukázkový formulář, který nikam nic neposílá — přesně jako moje
-      motivace v pondělí ráno.
+      Ukázkový formulář, který nikam nic neumí posílat. Jen do řiti.
+      Zkus to.
     </p>
 
-    <form>
+    <form onsubmit="return false;">
       <div>
         <label for="jmeno">Jméno</label><br>
         <input type="text" id="jmeno" name="jmeno" placeholder="Tvoje jméno">
@@ -40,13 +40,6 @@
         <label for="zprava">Zpráva</label><br>
         <textarea id="zprava" name="zprava" rows="5" placeholder="Napiš zprávu..."></textarea>
       </div>
-      <button type="submit" class="btn">Odeslat</button>
-    </form>
-  </main>
-
-  <footer>
-    &copy; 2026 Testovací Web — vytvořeno v záchvatu nadšení a tří šálků kávy.
-  </footer>
-
-</body>
-</html>
+      <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <button type="submit" class="btn">Odeslat</button>
+        <button type="button" class="btn btn-small" onclick="document.getElementById('poslat-vysledek').style.displ
